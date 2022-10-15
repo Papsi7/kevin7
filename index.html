@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .gallery img {
+          width: 40%;
+          height: 40%;
+          object-fit: cover;
+          align-content: center;
+          object-position: center;
+          transition: transform ease-in-out 0.5s;
+        }
+        body {
+          background-color: rgb(233, 66, 116);
+        }
+        .zoom {
+          z-index: 1;
+          transform: scale(1.5);
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        #fullpage {
+          display: none;
+          position: absolute;
+          z-index: 9999;
+          top: 0;
+          left: 20%;
+          width: 50vw;
+          height: 50vh;
+        
+        
+          background-size: contain;
+          background-repeat: no-repeat no-repeat;
+          background-position: center center;
+          background-color: rgb(99, 44, 44);
+          
+          margin-left: auto;
+          margin-right: auto;
+        }
+            </style>
+
+<h1 style="background-color:DodgerBlue;">My Weblog</h1>
+<body onload="getPics()">
+    <div class="container">
+      <div class="gallery">
+        <img src="img/black.jpg" />
+      </div>
+    </div>
+    <div id="fullpage" onclick="this.style.display='none';"></div>
+
+    <div>
+        <div class="hobby"></div>
+        <h1 style="background-color:rgb(34, 182, 95);"  <p>My Hobbies:</p>
+        <ul>
+           
+          <li>Laser Light</li>
+          <li>Sleeping</li>
+          <li>String</li>
+        </ul>
+        <h1 style="background-color:rgb(191, 30, 255);" <p>About the cat:</p>
+        <ol>
+          The record for the longest cat ever is 48.5 inches
+        </ol>
+      </div>
+
+<!--javascript to-->
+    <script>
+        function getPics() {} //just for this demo
+const imgs = document.querySelectorAll('.gallery img');
+const fullPage = document.querySelector('#fullpage');
+
+imgs.forEach(img => {
+  img.addEventListener('click', function() {
+    fullPage.style.backgroundImage = 'url(' + img.src + ')';
+    fullPage.style.display = 'block';
+  });
+});
+    </script>
+<!--hanggang dito ang javascript-->
+</body>
+
+</html>
